@@ -1,38 +1,35 @@
 #usda 1.0
 
-def Xform "Sphere"
+def PhysicsScene "physicsScene"
 {
-    def Sphere "Sphere"
-    {
-        color3f[] primvars:displayColor = [(0, 0, 1)]
-    }
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 981
 }
 
-def Xform "Light"
+def Xform "compoundRigid" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
 {
-    float3 xformOp:rotateXYZ = (37.26105, 3.1637092, 106.936325)
-    float3 xformOp:scale = (1, 0.99999994, 1)
-    double3 xformOp:translate = (4.076245307922363, 1.0054539442062378, 5.903861999511719)
-    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    quatf xformOp:orient = (1, 0, 0, 0)
+    double3 xformOp:translate = (0, 0, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
 
-    def SphereLight "Light"
+    def Cube "physicsBoxShape" (
+        prepend apiSchemas = ["PhysicsCollisionAPI"]
+    )
     {
-        float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
-        color3f inputs:color = (1, 1, 1)
-        float inputs:diffuse = 1
-        float inputs:exposure = 0
-        float inputs:intensity = 318.30988
-        bool inputs:normalize = 1
-        float inputs:radius = 0.1
-        float inputs:specular = 1
+        uniform token purpose = "guide"
+        double size = 25
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
     }
-}
 
-def Xform "Camera"
-{
-    float3 xformOp:rotateXYZ = (63.559296, 2.2983238e-7, 46.691944)
-    float3 xformOp:scale = (1, 1, 1)
-    double3 xformOp:translate = (7.358891487121582, -6.925790786743164, 4.958309173583984)
-    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    def Sphere "renderingSphere"
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
 }
 

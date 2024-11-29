@@ -4,36 +4,56 @@
 #  personal capacity and am not conveying any rights to any intellectual
 #  property of any third parties.
 
-from pxr import CameraUtil, Usd, UsdImagingGL, UsdGeom, Gf, Sdf, Ar, UsdLux, Glf
+from pxr import CameraUtil, Usd, UsdImagingGL, UsdGeom, Gf, Sdf, Ar, UsdPhysics, Glf
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("basic_physics.usda")
-    stage.DefinePrim('/Sphere', 'Xform')
-    sphere = stage.DefinePrim('/Sphere/Sphere', 'Sphere')
-    sphereSchema = UsdGeom.Sphere(sphere)
-    sphereSchema.GetDisplayColorAttr().Set([(0, 0, 1)])
 
-    xform = stage.DefinePrim('/Light', 'Xform')
-    xformSchema = UsdGeom.XformCommonAPI(xform)
-    xformSchema.SetRotate((37.26105, 3.1637092, 106.936325))
-    xformSchema.SetScale((1, 0.99999994, 1))
-    xformSchema.SetTranslate((4.076245307922363, 1.0054539442062378, 5.903861999511719))
+    # Physics scene definition
+    scene = UsdPhysics.Scene.Define(stage, "/physicsScene")
 
-    light = stage.DefinePrim('/Light/Light', 'SphereLight')
-    lightSchema = UsdLux.SphereLight(light)
-    lightSchema.GetExtentAttr().Set([(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)])
-    lightSchema.GetColorAttr().Set((1, 1, 1))
-    lightSchema.GetDiffuseAttr().Set(1)
-    lightSchema.GetExposureAttr().Set(0)
-    lightSchema.GetIntensityAttr().Set(318.30988)
-    lightSchema.GetNormalizeAttr().Set(1)
-    lightSchema.GetRadiusAttr().Set(0.1)
-    lightSchema.GetSpecularAttr().Set(1)
+    # setup gravity
+    # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
+    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, 0.0, -1.0))
+    scene.CreateGravityMagnitudeAttr().Set(981.0)
 
-    xform = stage.DefinePrim('/Camera', 'Xform')
-    xformSchema = UsdGeom.XformCommonAPI(xform)
-    xformSchema.SetRotate((63.559296, 2.2983238e-7, 46.691944))
-    xformSchema.SetScale((1, 1, 1))
-    xformSchema.SetTranslate((7.358891487121582, -6.925790786743164, 4.958309173583984))
+    # Top level actor, contains rigid body
+    rigidCompoundPath = "/compoundRigid"
+    rigidXform = UsdGeom.Xform.Define(stage, rigidCompoundPath)
+    rigidPrim = stage.GetPrimAtPath(rigidCompoundPath)
+
+    # Rigid body transform
+    rigidCompoundPos = Gf.Vec3f(0.0, 0.0, 10.0)
+    rigidXform.AddTranslateOp().Set(rigidCompoundPos)
+    rigidXform.AddOrientOp().Set(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
+
+    physicsAPI = UsdPhysics.RigidBodyAPI.Apply(rigidPrim)
+
+    # Collision shape
+    collisionShape = rigidCompoundPath + "/physicsBoxShape"
+
+    size = 25.0
+    shapePos = Gf.Vec3f(0.0)
+    shapeQuat = Gf.Quatf(1.0)
+
+    cubeGeom = UsdGeom.Cube.Define(stage, collisionShape)
+    cubePrim = stage.GetPrimAtPath(collisionShape)
+    cubeGeom.CreateSizeAttr(size)
+    cubeGeom.AddTranslateOp().Set(shapePos)
+    cubeGeom.AddOrientOp().Set(shapeQuat)
+
+    # set it as collision
+    UsdPhysics.CollisionAPI.Apply(cubePrim)
+
+    # hide it from rendering
+    cubeGeom.CreatePurposeAttr(UsdGeom.Tokens.guide)
+
+    # rendering shape
+    renderSphere = rigidCompoundPath + "/renderingSphere"
+
+    sphereGeom = UsdGeom.Sphere.Define(stage, renderSphere)
+    # sphereGeom.CreateSizeAttr(20.0)
+    sphereGeom.AddTranslateOp().Set(shapePos)
+    sphereGeom.AddOrientOp().Set(shapeQuat)
 
     stage.Save()
