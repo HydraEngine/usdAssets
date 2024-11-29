@@ -4,10 +4,13 @@
 #  personal capacity and am not conveying any rights to any intellectual
 #  property of any third parties.
 
-from pxr import Usd, UsdGeom, Gf, UsdPhysics, UsdShade
+from pxr import Usd, UsdGeom, Gf, UsdPhysics, UsdShade, Usd, Usd
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("basic_physics.usda")
+    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
+    stage.SetEndTimeCode(1000)
+    stage.SetStartTimeCode(0)
 
     # Physics scene definition
     scene = UsdPhysics.Scene.Define(stage, "/physicsScene")
