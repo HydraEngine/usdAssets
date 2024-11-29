@@ -4,7 +4,7 @@
 #  personal capacity and am not conveying any rights to any intellectual
 #  property of any third parties.
 
-from pxr import CameraUtil, Usd, UsdImagingGL, UsdGeom, Gf, Sdf, Ar, UsdPhysics, Glf
+from pxr import Usd, UsdGeom, Gf, UsdPhysics, UsdShade
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("basic_physics.usda")
@@ -55,5 +55,23 @@ if __name__ == '__main__':
     # sphereGeom.CreateSizeAttr(20.0)
     sphereGeom.AddTranslateOp().Set(shapePos)
     sphereGeom.AddOrientOp().Set(shapeQuat)
+
+    # define physics material
+    materialPath = "/material"
+    mu = 1.0
+    UsdShade.Material.Define(stage, materialPath)
+    material = UsdPhysics.MaterialAPI.Apply(stage.GetPrimAtPath(materialPath))
+    material.CreateStaticFrictionAttr().Set(mu)
+    material.CreateDynamicFrictionAttr().Set(mu)
+    material.CreateRestitutionAttr().Set(0.0)
+    material.CreateDensityAttr().Set(1000.0)
+
+    collisionAPI = UsdPhysics.CollisionAPI.Get(stage, collisionShape)
+
+    # add the material to the collider
+    bindingAPI = UsdShade.MaterialBindingAPI.Apply(collisionAPI.GetPrim())
+    materialPrim = material.GetPrim()
+    material = UsdShade.Material(materialPrim)
+    bindingAPI.Bind(material, UsdShade.Tokens.weakerThanDescendants, "physics")
 
     stage.Save()

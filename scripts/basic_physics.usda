@@ -15,9 +15,12 @@ def Xform "compoundRigid" (
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
 
     def Cube "physicsBoxShape" (
-        prepend apiSchemas = ["PhysicsCollisionAPI"]
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
     )
     {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
         uniform token purpose = "guide"
         double size = 25
         quatf xformOp:orient = (1, 0, 0, 0)
@@ -31,5 +34,15 @@ def Xform "compoundRigid" (
         double3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
     }
+}
+
+def Material "material" (
+    prepend apiSchemas = ["PhysicsMaterialAPI"]
+)
+{
+    float physics:density = 1000
+    float physics:dynamicFriction = 1
+    float physics:restitution = 0
+    float physics:staticFriction = 1
 }
 
