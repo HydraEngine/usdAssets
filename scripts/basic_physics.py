@@ -46,7 +46,8 @@ if __name__ == '__main__':
     cubeGeom.AddOrientOp().Set(shapeQuat)
 
     # set it as collision
-    UsdPhysics.CollisionAPI.Apply(cubePrim)
+    collisionAPI = UsdPhysics.CollisionAPI.Apply(cubePrim)
+    collisionAPI.CreateCollisionEnabledAttr().Set(True)
 
     # hide it from rendering
     cubeGeom.CreatePurposeAttr(UsdGeom.Tokens.guide)

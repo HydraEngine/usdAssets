@@ -1,0 +1,73 @@
+#usda 1.0
+(
+    endTimeCode = 1000
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+def PhysicsScene "physicsScene"
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 981
+}
+
+def Cube "box0" (
+    prepend apiSchemas = ["PhysicsCollisionAPI"]
+)
+{
+    color3f[] primvars:displayColor = [(0.64705884, 0.08235294, 0.08235294)]
+    double size = 100
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (0.1, 1, 0.1)
+    double3 xformOp:translate = (0, 0, 1000)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+}
+
+def Cube "box1" (
+    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+)
+{
+    color3f[] primvars:displayColor = [(0.2784314, 0.64705884, 1)]
+    double size = 100
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (0.1, 1, 0.1)
+    double3 xformOp:translate = (0, 120, 1000)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+}
+
+def PhysicsRevoluteJoint "revoluteJoint" (
+    prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+)
+{
+    float drive:angular:physics:damping = 10000000000
+    float drive:angular:physics:maxForce = 1e20
+    float drive:angular:physics:stiffness = 0
+    float drive:angular:physics:targetVelocity = 1
+    uniform token drive:angular:physics:type = "force"
+    uniform token physics:axis = "X"
+    rel physics:body0 = </box0>
+    rel physics:body1 = </box1>
+    float physics:breakForce = 1e20
+    float physics:breakTorque = 1e20
+    point3f physics:localPos0 = (0, 60, 0)
+    point3f physics:localPos1 = (0, -60, 0)
+    quatf physics:localRot0 = (1, 0, 0, 0)
+    quatf physics:localRot1 = (1, 0, 0, 0)
+    float physics:lowerLimit = -90
+    float physics:upperLimit = 90
+}
+
+def PhysicsDistanceJoint "distanceJoint"
+{
+    rel physics:body0 = </box0>
+    rel physics:body1 = </box1>
+    float physics:breakForce = 1e20
+    float physics:breakTorque = 1e20
+    point3f physics:localPos0 = (0, 60, 0)
+    point3f physics:localPos1 = (0, -60, 0)
+    quatf physics:localRot0 = (1, 0, 0, 0)
+    quatf physics:localRot1 = (1, 0, 0, 0)
+    float physics:maxDistance = 10
+    float physics:minDistance = -10
+}
+
