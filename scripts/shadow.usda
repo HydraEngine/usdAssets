@@ -1,0 +1,58 @@
+#usda 1.0
+
+def Mesh "GroundPlane"
+{
+    int[] faceVertexCounts = [4]
+    int[] faceVertexIndices = [0, 1, 2, 3]
+    rel material:binding = </GroundMaterial>
+    point3f[] points = [(-10, 0, -10), (10, 0, -10), (10, 0, 10), (-10, 0, 10)]
+}
+
+def Material "GroundMaterial"
+{
+    token outputs:surface.connect = </GroundMaterial/GroundShader.outputs:surface>
+
+    def Shader "GroundShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (0.5, 0.5, 0.5)
+        float inputs:metallic = 0
+        float inputs:roughness = 0.5
+        token outputs:surface
+    }
+}
+
+def Sphere "Sphere"
+{
+    rel material:binding = </SphereMaterial>
+    double radius = 1
+    double3 xformOp:translate = (0, 1, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+}
+
+def Material "SphereMaterial"
+{
+    token outputs:surface.connect = </SphereMaterial/SphereShader.outputs:surface>
+
+    def Shader "SphereShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        color3f inputs:diffuseColor = (1, 0, 0)
+        float inputs:metallic = 0
+        float inputs:roughness = 0.5
+        token outputs:surface
+    }
+}
+
+def DistantLight "Light" (
+    prepend apiSchemas = ["ShadowAPI"]
+)
+{
+    color3f inputs:color = (1, 0, 1)
+    float inputs:intensity = 100000
+    bool inputs:shadow:enable = 1
+    float xformOp:rotateX = -80
+    double3 xformOp:translate = (0, 5, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+}
+
