@@ -5,7 +5,7 @@
 #  property of any third parties.
 import random
 
-from pxr import Usd, UsdGeom, Gf, UsdPhysics, UsdShade, Usd, Usd
+from pxr import UsdGeom, Gf, UsdPhysics, UsdShade, Usd
 
 
 def createCube(stage: Usd.Stage, name: str, translate: Gf.Vec3f, orient: Gf.Quatf):

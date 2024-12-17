@@ -1,0 +1,441 @@
+#usda 1.0
+(
+    upAxis = "Y"
+)
+
+def Xform "articulation" (
+    prepend apiSchemas = ["PhysicsArticulationRootAPI"]
+)
+{
+    def Capsule "articulationLink0" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsFixedJoint "rootJoint"
+    {
+        rel physics:body1 = </articulation/articulationLink0>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (0, 0, 24)
+        point3f physics:localPos1 = (0, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+    }
+
+    def Capsule "articulationLink1" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (4, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint1"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink0>
+        rel physics:body1 = </articulation/articulationLink1>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink2" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (8, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint2"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink1>
+        rel physics:body1 = </articulation/articulationLink2>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink3" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (12, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint3"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink2>
+        rel physics:body1 = </articulation/articulationLink3>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink4" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (16, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint4"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink3>
+        rel physics:body1 = </articulation/articulationLink4>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink5" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (20, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint5"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink4>
+        rel physics:body1 = </articulation/articulationLink5>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink6" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (24, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint6"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink5>
+        rel physics:body1 = </articulation/articulationLink6>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink7" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (28, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint7"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink6>
+        rel physics:body1 = </articulation/articulationLink7>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink8" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (32, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint8"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink7>
+        rel physics:body1 = </articulation/articulationLink8>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink9" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (36, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint9"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink8>
+        rel physics:body1 = </articulation/articulationLink9>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink10" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (40, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint10"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink9>
+        rel physics:body1 = </articulation/articulationLink10>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink11" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (44, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint11"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink10>
+        rel physics:body1 = </articulation/articulationLink11>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink12" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (48, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint12"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink11>
+        rel physics:body1 = </articulation/articulationLink12>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink13" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (52, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint13"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink12>
+        rel physics:body1 = </articulation/articulationLink13>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+
+    def Capsule "articulationLink14" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsRigidBodyAPI"]
+    )
+    {
+        uniform token axis = "X"
+        double height = 1
+        color3f[] primvars:displayColor = [(0.4, 0.2, 0.1)]
+        double radius = 1
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (56, 0, 24)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint14"
+    {
+        uniform token physics:axis = "Y"
+        rel physics:body0 = </articulation/articulationLink13>
+        rel physics:body1 = </articulation/articulationLink14>
+        float physics:breakForce = inf
+        float physics:breakTorque = inf
+        point3f physics:localPos0 = (2, 0, 0)
+        point3f physics:localPos1 = (-2, 0, 0)
+        quatf physics:localRot0 = (1, 0, 0, 0)
+        quatf physics:localRot1 = (1, 0, 0, 0)
+        float physics:lowerLimit = -0.098125
+        float physics:upperLimit = 0.098125
+    }
+}
+

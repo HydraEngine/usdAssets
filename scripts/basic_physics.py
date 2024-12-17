@@ -4,7 +4,7 @@
 #  personal capacity and am not conveying any rights to any intellectual
 #  property of any third parties.
 
-from pxr import Usd, UsdGeom, Gf, UsdPhysics, UsdShade, Usd, Usd
+from pxr import UsdGeom, Gf, UsdPhysics, UsdShade, Usd
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("basic_physics.usda")
