@@ -8,7 +8,7 @@
 def PhysicsScene "physicsScene"
 {
     vector3f physics:gravityDirection = (0, -1, 0)
-    float physics:gravityMagnitude = 981
+    float physics:gravityMagnitude = 9.81
 }
 
 def Xform "compoundRigid" (

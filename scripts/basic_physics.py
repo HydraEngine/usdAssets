@@ -18,7 +18,7 @@ if __name__ == '__main__':
     # setup gravity
     # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
     scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, -1.0, 0.0))
-    scene.CreateGravityMagnitudeAttr().Set(981.0)
+    scene.CreateGravityMagnitudeAttr().Set(9.81)
 
     # Top level actor, contains rigid body
     rigidCompoundPath = "/compoundRigid"
