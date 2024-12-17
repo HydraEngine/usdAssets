@@ -2,7 +2,7 @@
 (
     endTimeCode = 1000
     startTimeCode = 0
-    upAxis = "Z"
+    upAxis = "Y"
 )
 
 def PhysicsScene "physicsScene"
@@ -16,7 +16,7 @@ def Xform "compoundRigid" (
 )
 {
     quatf xformOp:orient = (1, 0, 0, 0)
-    double3 xformOp:translate = (0, 0, 10)
+    double3 xformOp:translate = (0, 10, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
 
     def Cube "physicsBoxShape" (

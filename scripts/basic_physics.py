@@ -8,7 +8,7 @@ from pxr import Usd, UsdGeom, Gf, UsdPhysics, UsdShade, Usd, Usd
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("basic_physics.usda")
-    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
+    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.y)
     stage.SetEndTimeCode(1000)
     stage.SetStartTimeCode(0)
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # setup gravity
     # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
-    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, 0.0, -1.0))
+    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, -1.0, 0.0))
     scene.CreateGravityMagnitudeAttr().Set(981.0)
 
     # Top level actor, contains rigid body
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     rigidPrim = stage.GetPrimAtPath(rigidCompoundPath)
 
     # Rigid body transform
-    rigidCompoundPos = Gf.Vec3f(0.0, 0.0, 10.0)
+    rigidCompoundPos = Gf.Vec3f(0.0, 10.0, 0.0)
     rigidXform.AddTranslateOp().Set(rigidCompoundPos)
     rigidXform.AddOrientOp().Set(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
 

@@ -8,7 +8,7 @@ from pxr import Usd, UsdGeom, Gf, UsdPhysics, UsdShade, Usd, Usd
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("collision.usda")
-    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
+    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.y)
     stage.SetEndTimeCode(1000)
     stage.SetStartTimeCode(0)
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # setup gravity
     # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
-    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, 0.0, -1.0))
+    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, -1.0, 0.0))
     scene.CreateGravityMagnitudeAttr().Set(981.0)
 
     # ==================================================================================================================
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     rigidPrim = stage.GetPrimAtPath(rigidCompoundPath)
 
     # Rigid body transform
-    rigidCompoundPos = Gf.Vec3f(0.0, 0.0, 10.0)
+    rigidCompoundPos = Gf.Vec3f(0.0, 10.0, 0.0)
     rigidXform.AddTranslateOp().Set(rigidCompoundPos)
     rigidXform.AddOrientOp().Set(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
 
@@ -84,11 +84,11 @@ if __name__ == '__main__':
     boxActorPath = "/box0"
 
     # box0 props
-    position = Gf.Vec3f(0.0, 0.0, -50.0)
+    position = Gf.Vec3f(0.0, -50.0, 0.0)
     orientation = Gf.Quatf(1.0)
     color = Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)
     size = 100.0
-    scale = Gf.Vec3f(1, 1, 0.1)
+    scale = Gf.Vec3f(1, 0.1, 1)
 
     cubeGeom = UsdGeom.Cube.Define(stage, boxActorPath)
     cubeGeom.CreateSizeAttr(size)
