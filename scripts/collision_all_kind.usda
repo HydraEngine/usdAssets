@@ -1,0 +1,2333 @@
+#usda 1.0
+(
+    endTimeCode = 1000
+    startTimeCode = 0
+    upAxis = "Y"
+)
+
+def PhysicsScene "physicsScene"
+{
+    vector3f physics:gravityDirection = (0, -1, 0)
+    float physics:gravityMagnitude = 9.81
+}
+
+def Xform "compoundRigid00" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.17766173, 0.7597872, 0.44645232, 0.43799555)
+    double3 xformOp:translate = (-25, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape00" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Material "material" (
+    prepend apiSchemas = ["PhysicsMaterialAPI"]
+)
+{
+    float physics:density = 1000
+    float physics:dynamicFriction = 1
+    float physics:restitution = 0
+    float physics:staticFriction = 1
+}
+
+def Xform "compoundRigid01" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.13672873, 0.7208544, 0.4870807, 0.4737368)
+    double3 xformOp:translate = (-25, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape01" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid02" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.4443645, 0.86041915, 0.24932352, 0.007543979)
+    double3 xformOp:translate = (-25, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape02" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid03" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.6204402, 0.24370138, 0.5426176, 0.5111063)
+    double3 xformOp:translate = (-25, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape03" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid04" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.16420296, 0.76780456, 0.36904475, 0.49731228)
+    double3 xformOp:translate = (-25, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape04" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid05" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.55117923, 0.3015844, 0.3130308, 0.7122219)
+    double3 xformOp:translate = (-25, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape05" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid06" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.443301, 0.19613843, 0.7402284, 0.46591404)
+    double3 xformOp:translate = (-25, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape06" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid07" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.90209293, 0.087470055, 0.06362275, 0.4177671)
+    double3 xformOp:translate = (-25, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape07" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid08" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.007465415, 0.46879798, 0.6793892, 0.56444937)
+    double3 xformOp:translate = (-25, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape08" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid09" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.06555863, 0.22961359, 0.7647519, 0.5984431)
+    double3 xformOp:translate = (-25, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape09" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid10" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.20324142, 0.36680794, 0.22514006, 0.8794639)
+    double3 xformOp:translate = (-20, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape10" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid11" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.15146182, 0.14077331, 0.46765506, 0.85938406)
+    double3 xformOp:translate = (-20, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape11" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid12" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.08453638, 0.4019205, 0.72833794, 0.5484865)
+    double3 xformOp:translate = (-20, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape12" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid13" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.19419944, 0.64774334, 0.65094, 0.3449525)
+    double3 xformOp:translate = (-20, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape13" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid14" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.65326476, 0.563745, 0.40036032, 0.30846113)
+    double3 xformOp:translate = (-20, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape14" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid15" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.25868833, 0.75605536, 0.036211655, 0.60012454)
+    double3 xformOp:translate = (-20, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape15" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid16" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.81914383, 0.012622237, 0.47631866, 0.31931904)
+    double3 xformOp:translate = (-20, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape16" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid17" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.24697581, 0.499677, 0.20450687, 0.80467564)
+    double3 xformOp:translate = (-20, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape17" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid18" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.034419417, 0.9197648, 0.19036785, 0.3414791)
+    double3 xformOp:translate = (-20, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape18" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid19" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.532887, 0.45473117, 0.4644935, 0.54175353)
+    double3 xformOp:translate = (-20, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape19" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid20" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.4034348, 0.5441244, 0.4780367, 0.55915105)
+    double3 xformOp:translate = (-15, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape20" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid21" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.5048542, 0.37267885, 0.61421007, 0.478517)
+    double3 xformOp:translate = (-15, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape21" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid22" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.49034163, 0.2997798, 0.004188823, 0.8183395)
+    double3 xformOp:translate = (-15, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape22" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid23" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.51779485, 0.70804006, 0.2875477, 0.384557)
+    double3 xformOp:translate = (-15, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape23" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid24" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.6078327, 0.74634457, 0.010185382, 0.27093437)
+    double3 xformOp:translate = (-15, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape24" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid25" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.53548247, 0.47673997, 0.3594288, 0.5973177)
+    double3 xformOp:translate = (-15, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape25" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid26" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.22720037, 0.6563131, 0.6341618, 0.33981156)
+    double3 xformOp:translate = (-15, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape26" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid27" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.50408125, 0.6337351, 0.109239295, 0.57649684)
+    double3 xformOp:translate = (-15, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape27" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid28" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.020018548, 0.8074696, 0.14913225, 0.57039607)
+    double3 xformOp:translate = (-15, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape28" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid29" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.7439443, 0.27557135, 0.4186712, 0.44195238)
+    double3 xformOp:translate = (-15, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape29" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid30" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.50721776, 0.656951, 0.2674991, 0.4894791)
+    double3 xformOp:translate = (-10, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape30" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid31" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.9390212, 0.27154472, 0.19652629, 0.076681204)
+    double3 xformOp:translate = (-10, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape31" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid32" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.2207771, 0.5422822, 0.8060469, 0.08646266)
+    double3 xformOp:translate = (-10, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape32" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid33" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.362634, 0.42145735, 0.7857064, 0.27117464)
+    double3 xformOp:translate = (-10, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape33" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid34" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.44362265, 0.7720693, 0.19722994, 0.41013208)
+    double3 xformOp:translate = (-10, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape34" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid35" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.20831265, 0.44516075, 0.46047825, 0.73918706)
+    double3 xformOp:translate = (-10, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape35" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid36" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.60848606, 0.49343878, 0.03382685, 0.62057924)
+    double3 xformOp:translate = (-10, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape36" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid37" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.20538266, 0.58974963, 0.6262039, 0.46677834)
+    double3 xformOp:translate = (-10, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape37" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid38" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.59197015, 0.06534258, 0.27801257, 0.75366485)
+    double3 xformOp:translate = (-10, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape38" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid39" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.50836694, 0.41931123, 0.5602085, 0.50190395)
+    double3 xformOp:translate = (-10, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape39" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid40" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.39548427, 0.4826526, 0.77954954, 0.05423298)
+    double3 xformOp:translate = (-5, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape40" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid41" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.9211092, 0.34307793, 0.052537836, 0.17633851)
+    double3 xformOp:translate = (-5, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape41" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid42" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.07702786, 0.7122938, 0.62107605, 0.31775564)
+    double3 xformOp:translate = (-5, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape42" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid43" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.14793576, 0.48981982, 0.5710746, 0.6419231)
+    double3 xformOp:translate = (-5, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape43" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid44" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.06478107, 0.6397779, 0.66743696, 0.37552038)
+    double3 xformOp:translate = (-5, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape44" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid45" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.0547569, 0.598959, 0.6510245, 0.46305162)
+    double3 xformOp:translate = (-5, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape45" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid46" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.21926264, 0.27510598, 0.60864747, 0.7111883)
+    double3 xformOp:translate = (-5, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape46" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid47" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.32367915, 0.6073271, 0.5963719, 0.41319028)
+    double3 xformOp:translate = (-5, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape47" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid48" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.2751029, 0.14729464, 0.7814242, 0.54036915)
+    double3 xformOp:translate = (-5, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape48" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid49" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.883228, 0.23569351, 0.39433756, 0.094099574)
+    double3 xformOp:translate = (-5, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape49" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid50" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.67839783, 0.4501032, 0.05940635, 0.57762814)
+    double3 xformOp:translate = (0, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape50" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid51" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.45401275, 0.4933847, 0.5188513, 0.5303182)
+    double3 xformOp:translate = (0, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape51" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid52" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.48122647, 0.62385106, 0.5374611, 0.3006104)
+    double3 xformOp:translate = (0, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape52" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid53" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.5758357, 0.3228562, 0.73546773, 0.15252657)
+    double3 xformOp:translate = (0, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape53" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid54" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.39825985, 0.19069368, 0.74310786, 0.50280786)
+    double3 xformOp:translate = (0, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape54" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid55" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.35607392, 0.08443594, 0.63886565, 0.67670715)
+    double3 xformOp:translate = (0, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape55" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid56" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.5853278, 0.11159512, 0.16184013, 0.78660387)
+    double3 xformOp:translate = (0, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape56" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid57" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.1080283, 0.78980154, 0.19843677, 0.5702336)
+    double3 xformOp:translate = (0, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape57" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid58" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.12665805, 0.7625969, 0.5786323, 0.25997782)
+    double3 xformOp:translate = (0, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape58" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid59" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.62937075, 0.09186812, 0.6298566, 0.44579527)
+    double3 xformOp:translate = (0, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape59" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid60" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.37002683, 0.45391157, 0.42714795, 0.6889042)
+    double3 xformOp:translate = (5, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape60" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid61" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.2851539, 0.6096433, 0.5469506, 0.4978628)
+    double3 xformOp:translate = (5, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape61" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid62" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.2664753, 0.06152437, 0.65708464, 0.70245683)
+    double3 xformOp:translate = (5, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape62" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid63" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.6874485, 0.5748011, 0.042057514, 0.44187033)
+    double3 xformOp:translate = (5, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape63" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid64" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.108502366, 0.6431554, 0.75793093, 0.0109125115)
+    double3 xformOp:translate = (5, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape64" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid65" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.08450395, 0.3513064, 0.9028498, 0.23303467)
+    double3 xformOp:translate = (5, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape65" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid66" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.46956304, 0.62982124, 0.52422345, 0.32867244)
+    double3 xformOp:translate = (5, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape66" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid67" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.28087863, 0.5727862, 0.5212664, 0.5668372)
+    double3 xformOp:translate = (5, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape67" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid68" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.25064188, 0.2786406, 0.8809668, 0.28885213)
+    double3 xformOp:translate = (5, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape68" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid69" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.3795722, 0.6278305, 0.6759886, 0.0692327)
+    double3 xformOp:translate = (5, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape69" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid70" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.05618627, 0.6048652, 0.6834476, 0.40482172)
+    double3 xformOp:translate = (10, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape70" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid71" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.6678354, 0.39876348, 0.6270122, 0.042888712)
+    double3 xformOp:translate = (10, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape71" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid72" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.10499221, 0.8429352, 0.4049838, 0.33826765)
+    double3 xformOp:translate = (10, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape72" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid73" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.6178428, 0.39150998, 0.14144278, 0.6670713)
+    double3 xformOp:translate = (10, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape73" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid74" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.58599335, 0.39826038, 0.31757763, 0.6301943)
+    double3 xformOp:translate = (10, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape74" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid75" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.6094606, 0.22840774, 0.15795334, 0.742589)
+    double3 xformOp:translate = (10, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape75" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid76" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.15680353, 0.5557197, 0.64812726, 0.49650723)
+    double3 xformOp:translate = (10, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape76" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid77" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.32254153, 0.49646288, 0.68238527, 0.4287679)
+    double3 xformOp:translate = (10, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape77" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid78" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.2443885, 0.2947761, 0.5768216, 0.7215665)
+    double3 xformOp:translate = (10, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape78" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid79" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.92393976, 0.19022945, 0.32696262, 0.05695155)
+    double3 xformOp:translate = (10, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape79" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid80" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.47613811, 0.32456806, 0.7731853, 0.2648252)
+    double3 xformOp:translate = (15, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape80" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid81" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.45797265, 0.425109, 0.13755488, 0.76851934)
+    double3 xformOp:translate = (15, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape81" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid82" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.8131714, 0.2605088, 0.40834996, 0.32270387)
+    double3 xformOp:translate = (15, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape82" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid83" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.54743046, 0.7658059, 0.067950994, 0.33052078)
+    double3 xformOp:translate = (15, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape83" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid84" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.68472946, 0.08177043, 0.3666288, 0.62453383)
+    double3 xformOp:translate = (15, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape84" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid85" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.47153264, 0.2365549, 0.70863986, 0.46853846)
+    double3 xformOp:translate = (15, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape85" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid86" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.18925236, 0.6127462, 0.39692605, 0.65663946)
+    double3 xformOp:translate = (15, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape86" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid87" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.5426092, 0.40366566, 0.48995098, 0.5500702)
+    double3 xformOp:translate = (15, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape87" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid88" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.6911327, 0.65327084, 0.055847287, 0.304062)
+    double3 xformOp:translate = (15, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape88" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid89" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.33871996, 0.1582746, 0.74968725, 0.546065)
+    double3 xformOp:translate = (15, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape89" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid90" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.32860994, 0.7698375, 0.41942477, 0.35135248)
+    double3 xformOp:translate = (20, 10, -25)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape90" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid91" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.2463512, 0.31910205, 0.6564881, 0.63758004)
+    double3 xformOp:translate = (20, 10, -20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape91" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid92" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.24287471, 0.50965923, 0.2235391, 0.79453737)
+    double3 xformOp:translate = (20, 10, -15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape92" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid93" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.37129414, 0.69149613, 0.12359832, 0.60720444)
+    double3 xformOp:translate = (20, 10, -10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape93" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid94" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.52192664, 0.5394352, 0.65402746, 0.094075784)
+    double3 xformOp:translate = (20, 10, -5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape94" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid95" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.22322553, 0.78492296, 0.17566188, 0.5506443)
+    double3 xformOp:translate = (20, 10, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape95" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid96" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.06071276, 0.5383979, 0.5720807, 0.61576414)
+    double3 xformOp:translate = (20, 10, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape96" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid97" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.17686711, 0.089128025, 0.79509276, 0.5732379)
+    double3 xformOp:translate = (20, 10, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape97" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid98" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.11072812, 0.6152677, 0.7239397, 0.29171243)
+    double3 xformOp:translate = (20, 10, 15)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape98" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Xform "compoundRigid99" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (0.050734274, 0.9471868, 0.14663462, 0.28064495)
+    double3 xformOp:translate = (20, 10, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cube "physicsBoxShape99" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double size = 2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Plane "plane" (
+    prepend apiSchemas = ["PhysicsCollisionAPI"]
+)
+{
+    uniform token axis = "Y"
+    double length = 100
+    color3f[] primvars:displayColor = [(0.64705884, 0.08235294, 0.08235294)]
+    double width = 100
+}
+
