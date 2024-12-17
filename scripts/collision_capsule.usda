@@ -16,7 +16,7 @@ def Xform "compoundRigid" (
 )
 {
     quatf xformOp:orient = (1, 0, 0, 0)
-    double3 xformOp:translate = (0, 60, 0)
+    double3 xformOp:translate = (0, 10, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
 
     def Capsule "physicsCapsuleShape" (
@@ -24,12 +24,12 @@ def Xform "compoundRigid" (
     )
     {
         uniform token axis = "Y"
-        double height = 60
+        double height = 6
         rel material:binding:physics = </material> (
             bindMaterialAs = "weakerThanDescendants"
         )
         bool physics:collisionEnabled = 1
-        double radius = 30
+        double radius = 3
         quatf xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
@@ -46,15 +46,13 @@ def Material "material" (
     float physics:staticFriction = 1
 }
 
-def Cube "box0" (
+def Plane "plane" (
     prepend apiSchemas = ["PhysicsCollisionAPI"]
 )
 {
+    uniform token axis = "Y"
+    double length = 100
     color3f[] primvars:displayColor = [(0.64705884, 0.08235294, 0.08235294)]
-    double size = 100
-    quatf xformOp:orient = (1, 0, 0, 0)
-    float3 xformOp:scale = (10, 0.1, 10)
-    double3 xformOp:translate = (0, -50, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    double width = 100
 }
 

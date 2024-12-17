@@ -40,8 +40,8 @@ if __name__ == '__main__':
     shapeQuat = Gf.Quatf(1.0)
 
     capsuleGeom = UsdGeom.Capsule.Define(stage, collisionShape)
-    capsuleGeom.CreateRadiusAttr(30)
-    capsuleGeom.CreateHeightAttr(60)
+    capsuleGeom.CreateRadiusAttr(3)
+    capsuleGeom.CreateHeightAttr(6)
     capsuleGeom.CreateAxisAttr("Y")
     capsuleGeom.AddTranslateOp().Set(shapePos)
     capsuleGeom.AddOrientOp().Set(shapeQuat)
@@ -72,25 +72,18 @@ if __name__ == '__main__':
     bindingAPI.Bind(material, UsdShade.Tokens.weakerThanDescendants, "physics")
 
     # ==================================================================================================================
-    # box0 static
-    boxActorPath = "/box0"
+    # plane static
+    planeActorPath = "/plane"
 
-    # box0 props
-    position = Gf.Vec3f(0.0, -50.0, 0.0)
-    orientation = Gf.Quatf(1.0)
-    color = Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)
-    size = 100.0
-    scale = Gf.Vec3f(10, 0.1, 10)
-
-    cubeGeom = UsdGeom.Cube.Define(stage, boxActorPath)
-    cubeGeom.CreateSizeAttr(size)
-    cubeGeom.AddTranslateOp().Set(position)
-    cubeGeom.AddOrientOp().Set(orientation)
-    cubeGeom.AddScaleOp().Set(scale)
-    cubeGeom.CreateDisplayColorAttr().Set([color])
+    # plane props
+    planeGeom = UsdGeom.Plane.Define(stage, planeActorPath)
+    planeGeom.CreateAxisAttr("Y")
+    planeGeom.CreateWidthAttr(100)
+    planeGeom.CreateLengthAttr(100)
+    planeGeom.CreateDisplayColorAttr().Set([Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)])
 
     # make it a static body - just apply PhysicsCollisionAPI
-    cubePrim = stage.GetPrimAtPath(boxActorPath)
-    UsdPhysics.CollisionAPI.Apply(cubePrim)
+    planePrim = stage.GetPrimAtPath(planeActorPath)
+    UsdPhysics.CollisionAPI.Apply(planePrim)
 
     stage.Save()
