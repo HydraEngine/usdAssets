@@ -3,7 +3,7 @@
 #  I am making my contributions/submissions to this project solely in my
 #  personal capacity and am not conveying any rights to any intellectual
 #  property of any third parties.
-
+import math
 import sys
 
 from pxr import UsdGeom, Gf, UsdPhysics, Usd, Sdf
@@ -32,6 +32,7 @@ if __name__ == '__main__':
     UsdGeom.Xform.Define(stage, "/articulation")
     UsdPhysics.ArticulationRootAPI.Apply(stage.GetPrimAtPath("/articulation"))
 
+    targetVel = 1
     parentName = "/articulation"
 
     # Create chain
@@ -77,6 +78,19 @@ if __name__ == '__main__':
             component.CreateAxisAttr("Y")
             component.CreateLowerLimitAttr(float(-3.14 / 32.0))
             component.CreateUpperLimitAttr(float(3.14 / 32.0))
+
+            # optionally add angular drive for example
+            angularDriveAPI = UsdPhysics.DriveAPI.Apply(stage.GetPrimAtPath(articulatedJointName), "rotY")
+            angularDriveAPI.CreateTypeAttr("force")
+            angularDriveAPI.CreateMaxForceAttr(1e20)
+            targetVel *= -1
+            angularDriveAPI.CreateTargetVelocityAttr(targetVel)
+            angularDriveAPI.CreateDampingAttr(1e10)
+            angularDriveAPI.CreateStiffnessAttr(0.0)
+
+            angularLimitAPI = UsdPhysics.LimitAPI.Apply(stage.GetPrimAtPath(articulatedJointName), "rotY")
+            angularLimitAPI.CreateLowAttr(-math.pi)
+            angularLimitAPI.CreateHighAttr(math.pi)
 
         else:
             # create the root joint

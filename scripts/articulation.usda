@@ -52,8 +52,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint1"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint1" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = -1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink0>
         rel physics:body1 = </articulation/articulationLink1>
@@ -81,8 +90,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint2"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint2" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = 1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink1>
         rel physics:body1 = </articulation/articulationLink2>
@@ -110,8 +128,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint3"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint3" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = -1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink2>
         rel physics:body1 = </articulation/articulationLink3>
@@ -139,8 +166,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint4"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint4" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = 1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink3>
         rel physics:body1 = </articulation/articulationLink4>
@@ -168,8 +204,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint5"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint5" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = -1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink4>
         rel physics:body1 = </articulation/articulationLink5>
@@ -197,8 +242,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint6"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint6" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = 1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink5>
         rel physics:body1 = </articulation/articulationLink6>
@@ -226,8 +280,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint7"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint7" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = -1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink6>
         rel physics:body1 = </articulation/articulationLink7>
@@ -255,8 +318,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint8"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint8" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = 1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink7>
         rel physics:body1 = </articulation/articulationLink8>
@@ -284,8 +356,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint9"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint9" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = -1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink8>
         rel physics:body1 = </articulation/articulationLink9>
@@ -313,8 +394,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint10"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint10" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = 1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink9>
         rel physics:body1 = </articulation/articulationLink10>
@@ -342,8 +432,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint11"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint11" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = -1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink10>
         rel physics:body1 = </articulation/articulationLink11>
@@ -371,8 +470,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint12"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint12" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = 1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink11>
         rel physics:body1 = </articulation/articulationLink12>
@@ -400,8 +508,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint13"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint13" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = -1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink12>
         rel physics:body1 = </articulation/articulationLink13>
@@ -429,8 +546,17 @@ def Xform "articulation" (
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
-    def PhysicsRevoluteJoint "articulatedRevoluteJoint14"
+    def PhysicsRevoluteJoint "articulatedRevoluteJoint14" (
+        prepend apiSchemas = ["PhysicsDriveAPI:rotY", "PhysicsLimitAPI:rotY"]
+    )
     {
+        float drive:rotY:physics:damping = 10000000000
+        float drive:rotY:physics:maxForce = 1e20
+        float drive:rotY:physics:stiffness = 0
+        float drive:rotY:physics:targetVelocity = 1
+        uniform token drive:rotY:physics:type = "force"
+        float limit:rotY:physics:high = 3.1415927
+        float limit:rotY:physics:low = -3.1415927
         uniform token physics:axis = "Y"
         rel physics:body0 = </articulation/articulationLink13>
         rel physics:body1 = </articulation/articulationLink14>

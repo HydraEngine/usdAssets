@@ -97,13 +97,4 @@ if __name__ == '__main__':
     # distanceJoint.CreateBreakForceAttr().Set(1e20)
     # distanceJoint.CreateBreakTorqueAttr().Set(1e20)
 
-    #===================================================================================================================
-    # optionally add angular drive for example
-    # angularDriveAPI = UsdPhysics.DriveAPI.Apply(stage.GetPrimAtPath("/revoluteJoint"), "angular")
-    # angularDriveAPI.CreateTypeAttr("force")
-    # angularDriveAPI.CreateMaxForceAttr(1e20)
-    # angularDriveAPI.CreateTargetVelocityAttr(1.0)
-    # angularDriveAPI.CreateDampingAttr(1e10)
-    # angularDriveAPI.CreateStiffnessAttr(0.0)
-
     stage.Save()
