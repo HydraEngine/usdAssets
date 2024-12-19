@@ -36,30 +36,27 @@ if __name__ == '__main__':
     # Collision shape
     collisionShape = rigidCompoundPath + "/physicsBoxShape"
 
-    size = 25.0
-    shapePos = Gf.Vec3f(0.0)
-    shapeQuat = Gf.Quatf(1.0)
-
     meshGeom = UsdGeom.Mesh.Define(stage, collisionShape)
     meshPrim = stage.GetPrimAtPath(collisionShape)
-    meshGeom.AddTranslateOp().Set(shapePos)
-    meshGeom.AddOrientOp().Set(shapeQuat)
+    meshGeom.AddTranslateOp().Set(Gf.Vec3f(0.0))
+    meshGeom.AddOrientOp().Set(Gf.Quatf(1.0))
+    meshGeom.AddScaleOp().Set(Gf.Vec3f(25, 25, 25))
     meshGeom.CreatePointsAttr(
         [Gf.Vec3f(1, 1, 1), Gf.Vec3f(0, 1, 0), Gf.Vec3f(1, 1, 0), Gf.Vec3f(0, 1, 1),
          Gf.Vec3f(1, 0, 1), Gf.Vec3f(0, 0, 0), Gf.Vec3f(1, 0, 0), Gf.Vec3f(0, 0, 1)])
     meshGeom.CreateFaceVertexIndicesAttr([
-        3, 7, 6,
-        2, 3, 6,
-        8, 5, 1,
-        8, 1, 4,
-        2, 3, 1,
-        2, 1, 4,
-        6, 7, 5,
-        6, 5, 8,
-        7, 5, 1,
-        7, 1, 3,
-        6, 8, 4,
-        6, 4, 2
+        2, 6, 5,
+        1, 2, 5,
+        7, 4, 0,
+        7, 0, 3,
+        1, 2, 0,
+        1, 0, 3,
+        5, 6, 4,
+        5, 4, 7,
+        6, 4, 0,
+        6, 0, 2,
+        5, 7, 3,
+        5, 3, 1
     ])
     meshGeom.CreateFaceVertexCountsAttr([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])
 
@@ -93,18 +90,12 @@ if __name__ == '__main__':
     boxActorPath = "/box0"
 
     # box0 props
-    position = Gf.Vec3f(0.0, -50.0, 0.0)
-    orientation = Gf.Quatf(1.0)
-    color = Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)
-    size = 100.0
-    scale = Gf.Vec3f(1, 0.1, 1)
-
     cubeGeom = UsdGeom.Cube.Define(stage, boxActorPath)
-    cubeGeom.CreateSizeAttr(size)
-    cubeGeom.AddTranslateOp().Set(position)
-    cubeGeom.AddOrientOp().Set(orientation)
-    cubeGeom.AddScaleOp().Set(scale)
-    cubeGeom.CreateDisplayColorAttr().Set([color])
+    cubeGeom.CreateSizeAttr(100.0)
+    cubeGeom.AddTranslateOp().Set(Gf.Vec3f(0.0, -50.0, 0.0))
+    cubeGeom.AddOrientOp().Set(Gf.Quatf(1.0))
+    cubeGeom.AddScaleOp().Set(Gf.Vec3f(1, 0.1, 1))
+    cubeGeom.CreateDisplayColorAttr().Set([Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)])
 
     # make it a static body - just apply PhysicsCollisionAPI
     cubePrim = stage.GetPrimAtPath(boxActorPath)

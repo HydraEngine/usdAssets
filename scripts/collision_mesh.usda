@@ -24,7 +24,7 @@ def Xform "compoundRigid" (
     )
     {
         int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
-        int[] faceVertexIndices = [3, 7, 6, 2, 3, 6, 8, 5, 1, 8, 1, 4, 2, 3, 1, 2, 1, 4, 6, 7, 5, 6, 5, 8, 7, 5, 1, 7, 1, 3, 6, 8, 4, 6, 4, 2]
+        int[] faceVertexIndices = [2, 6, 5, 1, 2, 5, 7, 4, 0, 7, 0, 3, 1, 2, 0, 1, 0, 3, 5, 6, 4, 5, 4, 7, 6, 4, 0, 6, 0, 2, 5, 7, 3, 5, 3, 1]
         rel material:binding:physics = </material> (
             bindMaterialAs = "weakerThanDescendants"
         )
@@ -32,8 +32,9 @@ def Xform "compoundRigid" (
         bool physics:collisionEnabled = 1
         point3f[] points = [(1, 1, 1), (0, 1, 0), (1, 1, 0), (0, 1, 1), (1, 0, 1), (0, 0, 0), (1, 0, 0), (0, 0, 1)]
         quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (25, 25, 25)
         double3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 }
 
