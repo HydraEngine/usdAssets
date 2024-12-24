@@ -4,15 +4,16 @@
 #  personal capacity and am not conveying any rights to any intellectual
 #  property of any third parties.
 
-from pxr import Usd, UsdGeom, UsdPhysics, UsdShade
+from pxr import Usd, UsdGeom, UsdPhysics, UsdShade, Gf
 
 if __name__ == '__main__':
-    # Load the existing USD file
-    stage = Usd.Stage.Open("../assets/bunny.usda")
-
     refStage = Usd.Stage.CreateNew('override_bunny_collider.usda')
-    meshPrim = refStage.OverridePrim('/bunny/Node/Mesh')
-    meshPrim.GetReferences().AddReference('../assets/bunny.usda')
+    UsdGeom.SetStageUpAxis(refStage, UsdGeom.Tokens.y)
+
+    meshPrim = refStage.OverridePrim('/MeshRef')
+    meshPrim.GetReferences().AddReference('../assets/bunny.usda', "/bunny/Node/Mesh")
+    overMesh = UsdGeom.Mesh.Get(refStage, '/MeshRef')
+    overMesh.CreateDisplayColorAttr().Set([Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)])
 
     physicsAPI = UsdPhysics.RigidBodyAPI.Apply(meshPrim)
 
@@ -40,4 +41,4 @@ if __name__ == '__main__':
     bindingAPI.Bind(material, UsdShade.Tokens.weakerThanDescendants, "physics")
 
     # Save the modified stage to a new USD file
-    refStage.Save()
+    refStage.GetRootLayer().Save()
