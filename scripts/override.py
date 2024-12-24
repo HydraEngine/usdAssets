@@ -13,7 +13,7 @@ if __name__ == '__main__':
     meshPrim = refStage.OverridePrim('/MeshRef')
     meshPrim.GetReferences().AddReference('../assets/bunny.usda', "/bunny/Node/Mesh")
     overMesh = UsdGeom.Mesh.Get(refStage, '/MeshRef')
-    overMesh.CreateDisplayColorAttr().Set([Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)])
+    overMesh.CreateDisplayColorAttr().Set([Gf.Vec3f(21.0 / 255.0, 165.0 / 255.0, 21.0 / 255.0)])
 
     physicsAPI = UsdPhysics.RigidBodyAPI.Apply(meshPrim)
 

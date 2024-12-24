@@ -13,7 +13,7 @@ over "MeshRef" (
     )
     uniform token physics:approximation = "convexDecomposition"
     bool physics:collisionEnabled = 1
-    color3f[] primvars:displayColor = [(0.64705884, 0.08235294, 0.08235294)]
+    color3f[] primvars:displayColor = [(0.08235294, 0.64705884, 0.08235294)]
 }
 
 def Material "material" (
