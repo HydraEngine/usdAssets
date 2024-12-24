@@ -28,6 +28,9 @@ def Xform "compoundRigid" (
         rel material:binding:physics = </material> (
             bindMaterialAs = "weakerThanDescendants"
         )
+        normal3f[] normals = [(1, 1, 1), (0, 1, 0), (1, 1, 0), (0, 1, 1), (1, 0, 1), (0, 0, 0), (1, 0, 0), (0, 0, 1)] (
+            interpolation = "vertex"
+        )
         uniform token physics:approximation = "convexDecomposition"
         bool physics:collisionEnabled = 1
         point3f[] points = [(1, 1, 1), (0, 1, 0), (1, 1, 0), (0, 1, 1), (1, 0, 1), (0, 0, 0), (1, 0, 0), (0, 0, 1)]

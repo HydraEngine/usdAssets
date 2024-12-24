@@ -44,6 +44,10 @@ if __name__ == '__main__':
     meshGeom.CreatePointsAttr(
         [Gf.Vec3f(1, 1, 1), Gf.Vec3f(0, 1, 0), Gf.Vec3f(1, 1, 0), Gf.Vec3f(0, 1, 1),
          Gf.Vec3f(1, 0, 1), Gf.Vec3f(0, 0, 0), Gf.Vec3f(1, 0, 0), Gf.Vec3f(0, 0, 1)])
+    meshGeom.CreateNormalsAttr(
+        [Gf.Vec3f(1, 1, 1), Gf.Vec3f(0, 1, 0), Gf.Vec3f(1, 1, 0), Gf.Vec3f(0, 1, 1),
+         Gf.Vec3f(1, 0, 1), Gf.Vec3f(0, 0, 0), Gf.Vec3f(1, 0, 0), Gf.Vec3f(0, 0, 1)])
+    meshGeom.SetNormalsInterpolation(UsdGeom.Tokens.vertex)
     meshGeom.CreateFaceVertexIndicesAttr([
         2, 6, 5,
         1, 2, 5,
