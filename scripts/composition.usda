@@ -32,7 +32,7 @@ def Cube "box0" (
     color3f[] primvars:displayColor = [(0.64705884, 0.08235294, 0.08235294)]
     double size = 100
     quatf xformOp:orient = (1, 0, 0, 0)
-    float3 xformOp:scale = (1, 0.1, 1)
+    float3 xformOp:scale = (5, 0.1, 5)
     double3 xformOp:translate = (0, -50, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 }

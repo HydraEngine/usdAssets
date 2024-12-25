@@ -40,7 +40,7 @@ if __name__ == '__main__':
     cubeGeom.CreateSizeAttr(100.0)
     cubeGeom.AddTranslateOp().Set(Gf.Vec3f(0.0, -50.0, 0.0))
     cubeGeom.AddOrientOp().Set(Gf.Quatf(1.0))
-    cubeGeom.AddScaleOp().Set(Gf.Vec3f(1, 0.1, 1))
+    cubeGeom.AddScaleOp().Set(Gf.Vec3f(5, 0.1, 5))
     cubeGeom.CreateDisplayColorAttr().Set([Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)])
 
     # make it a static body - just apply PhysicsCollisionAPI
