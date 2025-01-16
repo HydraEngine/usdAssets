@@ -1,11 +1,11 @@
 #usda 1.0
 (
-    upAxis = "Y"
+    upAxis = "Z"
 )
 
 def PhysicsScene "physicsScene"
 {
-    vector3f physics:gravityDirection = (0, -1, 0)
+    vector3f physics:gravityDirection = (0, 0, -1)
     float physics:gravityMagnitude = 9.81
 }
 
@@ -23,7 +23,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0, 0, 24)
+        double3 xformOp:translate = (0, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -32,7 +32,7 @@ def Xform "articulation" (
         rel physics:body1 = </articulation/articulationLink0>
         float physics:breakForce = inf
         float physics:breakTorque = inf
-        point3f physics:localPos0 = (0, 0, 24)
+        point3f physics:localPos0 = (0, 24, 0)
         point3f physics:localPos1 = (0, 0, 0)
         quatf physics:localRot0 = (1, 0, 0, 0)
         quatf physics:localRot1 = (1, 0, 0, 0)
@@ -48,7 +48,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (4, 0, 24)
+        double3 xformOp:translate = (4, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -86,7 +86,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (8, 0, 24)
+        double3 xformOp:translate = (8, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -124,7 +124,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (12, 0, 24)
+        double3 xformOp:translate = (12, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -162,7 +162,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (16, 0, 24)
+        double3 xformOp:translate = (16, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -200,7 +200,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (20, 0, 24)
+        double3 xformOp:translate = (20, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -238,7 +238,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (24, 0, 24)
+        double3 xformOp:translate = (24, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -276,7 +276,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (28, 0, 24)
+        double3 xformOp:translate = (28, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -314,7 +314,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (32, 0, 24)
+        double3 xformOp:translate = (32, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -352,7 +352,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (36, 0, 24)
+        double3 xformOp:translate = (36, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -390,7 +390,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (40, 0, 24)
+        double3 xformOp:translate = (40, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -428,7 +428,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (44, 0, 24)
+        double3 xformOp:translate = (44, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -466,7 +466,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (48, 0, 24)
+        double3 xformOp:translate = (48, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -504,7 +504,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (52, 0, 24)
+        double3 xformOp:translate = (52, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 
@@ -542,7 +542,7 @@ def Xform "articulation" (
         double radius = 1
         quatf xformOp:orient = (1, 0, 0, 0)
         float3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (56, 0, 24)
+        double3 xformOp:translate = (56, 24, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 

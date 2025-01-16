@@ -8,7 +8,7 @@ from pxr import UsdGeom, Gf, UsdPhysics, UsdShade, Usd
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("composition.usda")
-    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.y)
+    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
     stage.SetEndTimeCode(1000)
     stage.SetStartTimeCode(0)
 
@@ -17,14 +17,14 @@ if __name__ == '__main__':
 
     # setup gravity
     # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
-    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, -1.0, 0.0))
+    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, 0.0, -1.0))
     scene.CreateGravityMagnitudeAttr().Set(9.81)
 
     # ==================================================================================================================
     rigidXform = UsdGeom.Xform.Define(stage, '/compoundRigid')
 
     # Rigid body transform
-    rigidXform.AddTranslateOp().Set(Gf.Vec3f(0.0, 10.0, 0.0))
+    rigidXform.AddTranslateOp().Set(Gf.Vec3f(0.0, 0.0, 10.0))
     rigidXform.AddOrientOp().Set(Gf.Quatf(1.0, 0.0, 0.0, 0.0))
     rigidXform.AddScaleOp().Set(Gf.Vec3f(25, 25, 25))
 
@@ -38,9 +38,9 @@ if __name__ == '__main__':
     # box0 props
     cubeGeom = UsdGeom.Cube.Define(stage, boxActorPath)
     cubeGeom.CreateSizeAttr(100.0)
-    cubeGeom.AddTranslateOp().Set(Gf.Vec3f(0.0, -50.0, 0.0))
+    cubeGeom.AddTranslateOp().Set(Gf.Vec3f(0.0, 0.0, -50.0))
     cubeGeom.AddOrientOp().Set(Gf.Quatf(1.0))
-    cubeGeom.AddScaleOp().Set(Gf.Vec3f(5, 0.1, 5))
+    cubeGeom.AddScaleOp().Set(Gf.Vec3f(5, 5, 0.1))
     cubeGeom.CreateDisplayColorAttr().Set([Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)])
 
     # make it a static body - just apply PhysicsCollisionAPI

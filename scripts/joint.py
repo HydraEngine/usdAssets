@@ -8,7 +8,7 @@ from pxr import UsdGeom, Gf, UsdPhysics, Usd
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("joint.usda")
-    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.y)
+    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
     stage.SetEndTimeCode(1000)
     stage.SetStartTimeCode(0)
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # setup gravity
     # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
-    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, -1.0, 0.0))
+    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, 0.0, -1.0))
     scene.CreateGravityMagnitudeAttr().Set(9.81)
 
     # box0 static
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     cubeGeom.CreateSizeAttr(100)
     cubeGeom.AddTranslateOp().Set(Gf.Vec3f(60.0, 0.0, 0.0))
     cubeGeom.AddOrientOp().Set(Gf.Quatf(1))
-    cubeGeom.AddScaleOp().Set(Gf.Vec3f(0.1, 1, 0.1))
+    cubeGeom.AddScaleOp().Set(Gf.Vec3f(0.1, 0.1, 1))
     cubeGeom.CreateDisplayColorAttr().Set([Gf.Vec3f(71.0 / 255.0, 165.0 / 255.0, 1.0)])
 
     # setup dynamic rigid body
@@ -54,7 +54,7 @@ if __name__ == '__main__':
     revoluteJoint = UsdPhysics.RevoluteJoint.Define(stage, "/revoluteJoint")
 
     # define revolute joint axis and its limits, defined in degrees
-    revoluteJoint.CreateAxisAttr("X")
+    revoluteJoint.CreateAxisAttr("Y")
     revoluteJoint.CreateLowerLimitAttr(-90.0)
     revoluteJoint.CreateUpperLimitAttr(90.0)
 
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     revoluteJoint.CreateBody1Rel().SetTargets(["/box1"])
 
     # define revolute joint local poses for bodies
-    orientation = Gf.Rotation([0, 1, 0], 90)
+    orientation = Gf.Rotation([0, 0, 1], 90)
     revoluteJoint.CreateLocalPos0Attr().Set(Gf.Vec3f(0.0, 0.0, 0.0))
     revoluteJoint.CreateLocalRot0Attr().Set(Gf.Quatf(orientation.GetQuat()))
 

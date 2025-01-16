@@ -10,14 +10,14 @@ from pxr import UsdGeom, Gf, UsdPhysics, Usd, Sdf
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("articulation.usda")
-    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.y)
+    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
 
     # Physics scene definition
     scene = UsdPhysics.Scene.Define(stage, "/physicsScene")
 
     # setup gravity
     # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
-    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, -1.0, 0.0))
+    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, 0.0, -1.0))
     scene.CreateGravityMagnitudeAttr().Set(9.81)
 
     radius = 1.0
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     color = Gf.Vec3f(0.4, 0.2, 0.1)
     nbBoxes = 15
 
-    initPos = Gf.Vec3f(0.0, 0.0, 24.0)
+    initPos = Gf.Vec3f(0.0, 24.0, 0.0)
     pos = Gf.Vec3f(0.0, 0.0, 0.0)
 
     # setup the articulation as a parent of the hierarchy

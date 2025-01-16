@@ -57,7 +57,7 @@ def createCube(stage: Usd.Stage, name: str, translate: Gf.Vec3f, orient: Gf.Quat
 
 if __name__ == '__main__':
     stage = Usd.Stage.CreateNew("collision_all_kind.usda")
-    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.y)
+    UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
     stage.SetEndTimeCode(1000)
     stage.SetStartTimeCode(0)
 
@@ -66,13 +66,13 @@ if __name__ == '__main__':
 
     # setup gravity
     # note that gravity has to respect the selected units, if we are using cm, the gravity has to respect that
-    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, -1.0, 0.0))
+    scene.CreateGravityDirectionAttr().Set(Gf.Vec3f(0.0, 0.0, -1.0))
     scene.CreateGravityMagnitudeAttr().Set(9.81)
 
     # ==================================================================================================================
     for i in range(10):
         for j in range(10):
-            translate = Gf.Vec3f(i * 5 - 25, 10, j * 5 - 25)
+            translate = Gf.Vec3f(i * 5 - 25, j * 5 - 25, 10)
             orient = Gf.Quatf(random.random(), random.random(), random.random(), random.random())
             createCube(stage, f"{i}{j}", translate, orient.GetNormalized())
 
@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
     # plane props
     planeGeom = UsdGeom.Plane.Define(stage, planeActorPath)
-    planeGeom.CreateAxisAttr("Y")
+    planeGeom.CreateAxisAttr("Z")
     planeGeom.CreateWidthAttr(100)
     planeGeom.CreateLengthAttr(100)
     planeGeom.CreateDisplayColorAttr().Set([Gf.Vec3f(165.0 / 255.0, 21.0 / 255.0, 21.0 / 255.0)])

@@ -2,12 +2,12 @@
 (
     endTimeCode = 1000
     startTimeCode = 0
-    upAxis = "Y"
+    upAxis = "Z"
 )
 
 def PhysicsScene "physicsScene"
 {
-    vector3f physics:gravityDirection = (0, -1, 0)
+    vector3f physics:gravityDirection = (0, 0, -1)
     float physics:gravityMagnitude = 9.81
 }
 
@@ -15,7 +15,7 @@ def Xform "compoundRigid"
 {
     quatf xformOp:orient = (1, 0, 0, 0)
     float3 xformOp:scale = (25, 25, 25)
-    double3 xformOp:translate = (0, 10, 0)
+    double3 xformOp:translate = (0, 0, 10)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
     over "MeshRef" (
@@ -32,8 +32,8 @@ def Cube "box0" (
     color3f[] primvars:displayColor = [(0.64705884, 0.08235294, 0.08235294)]
     double size = 100
     quatf xformOp:orient = (1, 0, 0, 0)
-    float3 xformOp:scale = (5, 0.1, 5)
-    double3 xformOp:translate = (0, -50, 0)
+    float3 xformOp:scale = (5, 5, 0.1)
+    double3 xformOp:translate = (0, 0, -50)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 }
 

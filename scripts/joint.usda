@@ -2,12 +2,12 @@
 (
     endTimeCode = 1000
     startTimeCode = 0
-    upAxis = "Y"
+    upAxis = "Z"
 )
 
 def PhysicsScene "physicsScene"
 {
-    vector3f physics:gravityDirection = (0, -1, 0)
+    vector3f physics:gravityDirection = (0, 0, -1)
     float physics:gravityMagnitude = 9.81
 }
 
@@ -29,22 +29,22 @@ def Cube "box1" (
     color3f[] primvars:displayColor = [(0.2784314, 0.64705884, 1)]
     double size = 100
     quatf xformOp:orient = (1, 0, 0, 0)
-    float3 xformOp:scale = (0.1, 1, 0.1)
+    float3 xformOp:scale = (0.1, 0.1, 1)
     double3 xformOp:translate = (60, 0, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 }
 
 def PhysicsRevoluteJoint "revoluteJoint"
 {
-    uniform token physics:axis = "X"
+    uniform token physics:axis = "Y"
     rel physics:body0 = </box0>
     rel physics:body1 = </box1>
     float physics:breakForce = 1e20
     float physics:breakTorque = 1e20
     point3f physics:localPos0 = (0, 0, 0)
     point3f physics:localPos1 = (-60, 0, 0)
-    quatf physics:localRot0 = (0.70710677, 0, 0.70710677, 0)
-    quatf physics:localRot1 = (0.70710677, 0, 0.70710677, 0)
+    quatf physics:localRot0 = (0.70710677, 0, 0, 0.70710677)
+    quatf physics:localRot1 = (0.70710677, 0, 0, 0.70710677)
     float physics:lowerLimit = -90
     float physics:upperLimit = 90
 }
