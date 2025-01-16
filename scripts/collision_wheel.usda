@@ -1,0 +1,58 @@
+#usda 1.0
+(
+    endTimeCode = 1000
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+def PhysicsScene "physicsScene"
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+}
+
+def Xform "compoundRigid" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+)
+{
+    quatf xformOp:orient = (1, 0, 0, 0)
+    double3 xformOp:translate = (0, 0, 10)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+
+    def Cone "physicsWheelShape" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        uniform token axis = "Y"
+        double height = 6
+        rel material:binding:physics = </material> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        bool physics:collisionEnabled = 1
+        double radius = 3
+        quatf xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient"]
+    }
+}
+
+def Material "material" (
+    prepend apiSchemas = ["PhysicsMaterialAPI"]
+)
+{
+    float physics:density = 1000
+    float physics:dynamicFriction = 1
+    float physics:restitution = 0
+    float physics:staticFriction = 1
+}
+
+def Plane "plane" (
+    prepend apiSchemas = ["PhysicsCollisionAPI"]
+)
+{
+    uniform token axis = "Z"
+    double length = 100
+    color3f[] primvars:displayColor = [(0.64705884, 0.08235294, 0.08235294)]
+    double width = 100
+}
+
